@@ -1,4 +1,4 @@
-import { JapaneseProcessor, Token } from "./japanese-processor";
+import { JapaneseProcessorAPI, Token } from "./japanese-processor-api";
 import { SubtitleEntry } from "@/types";
 import { Dictionary } from "./dictionary";
 
@@ -36,12 +36,12 @@ export class VocabularyExtractor {
             }
 
             try {
-                const tokens = await JapaneseProcessor.tokenize(entry.text);
-                const filteredTokens = JapaneseProcessor.filterVocabulary(tokens);
+                const tokens = await JapaneseProcessorAPI.tokenize(entry.text);
+                const filteredTokens = JapaneseProcessorAPI.filterVocabulary(tokens);
 
                 for (const token of filteredTokens) {
                     const word = token.baseForm;
-                    const reading = JapaneseProcessor.getHiraganaReading(token.reading);
+                    const reading = JapaneseProcessorAPI.getHiraganaReading(token.reading);
 
                     if (vocabularyMap.has(word)) {
                         const existing = vocabularyMap.get(word)!;
