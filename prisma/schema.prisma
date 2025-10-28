@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  name          String?
+  password      String?
+  image         String?
+  emailVerified DateTime?
+  uploadedFiles SubtitleFile[]
+  quizAttempts  QuizAttempt[]
+  accounts      Account[]
+  sessions      Session[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model SubtitleFile {
+  id         String       @id @default(cuid())
+  userId     String
+  user       User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  filename   String
+  uploadDate DateTime     @default(now())
+  fileSize   Int
+  vocabulary Vocabulary[]
+}
+
+model Vocabulary {
+  id              String         @id @default(cuid())
+  fileId          String
+  file            SubtitleFile   @relation(fields: [fileId], references: [id], onDelete: Cascade)
+  word            String
+  reading         String
+  meaning         String
+  contextSentence String         @db.Text
+  frequency       Int
+  quizItems       QuizItem[]
+  createdAt       DateTime       @default(now())
+}
+
+model QuizAttempt {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fileId      String
+  score       Int
+  totalWords  Int
+  completedAt DateTime @default(now())
+}
+
+model QuizItem {
+  id           String      @id @default(cuid())
+  vocabularyId String
+  vocabulary   Vocabulary  @relation(fields: [vocabularyId], references: [id], onDelete: Cascade)
+  attempts     Int         @default(0)
+  correct      Int         @default(0)
+  lastReviewed DateTime?
+}
+
+model DictionaryCache {
+  id        String   @id @default(cuid())
+  word      String   @unique
+  reading   String?
+  meaning   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([word])
+}
+

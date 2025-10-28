@@ -1,0 +1,215 @@
+# AI Agent Prompt: Japanese Subtitle Quiz Application
+
+## Project Overview
+Create a Next.js application that allows users to upload Japanese subtitle files (.srt format) and automatically generates vocabulary quizzes from the content. Users can practice vocabulary words extracted from their uploaded files.
+
+## Technical Stack Requirements
+- **Framework**: Next.js 14+ (App Router)
+- **Authentication**: NextAuth.js or Clerk
+- **Database**: PostgreSQL with Prisma ORM (or Supabase)
+- **Styling**: Tailwind CSS
+- **File Processing**: Node.js fs/stream APIs
+- **Japanese Text Processing**: kuromoji.js or similar for tokenization
+- **Deployment**: Vercel-ready configuration
+
+## Core Features to Implement
+
+### 1. User Authentication
+- Sign up / Sign in functionality
+- Protected routes for authenticated users only
+- User profile page
+- Session management
+
+### 2. SRT File Upload System
+- File upload component with drag-and-drop support
+- Validate file is .srt format
+- Parse SRT file format (timestamp, sequence number, subtitle text)
+- Extract Japanese text from subtitles
+- Store original file metadata (filename, upload date, file size)
+
+### 3. Vocabulary Extraction Engine
+- Parse Japanese text to identify vocabulary words
+- Extract:
+  - Kanji compounds
+  - Common verbs, nouns, adjectives
+  - Frequency analysis
+- Filter out particles and very common words (configurable threshold)
+- Store vocabulary with:
+  - Original word (kanji/kana)
+  - Reading (hiragana)
+  - English translation (use API like Jisho.org or JMdict)
+  - Context sentence from subtitle
+  - Frequency in the file
+
+### 4. Quiz Generation System
+- Multiple quiz types:
+  - **Recognition**: Show kanji → select correct reading
+  - **Meaning**: Show word → select correct English meaning
+  - **Context**: Fill-in-the-blank from subtitle sentences
+  - **Reverse**: Show English → select correct Japanese word
+- Spaced repetition algorithm (optional: implement simple SRS)
+- Quiz sessions with scoring
+- Progress tracking
+
+### 5. User Dashboard
+- List of uploaded files
+- Statistics per file (word count, quiz attempts, accuracy)
+- Overall progress metrics
+- Practice history
+
+### 6. Database Schema
+```prisma
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  uploadedFiles SubtitleFile[]
+  quizAttempts  QuizAttempt[]
+  createdAt     DateTime  @default(now())
+}
+
+model SubtitleFile {
+  id           String    @id @default(cuid())
+  userId       String
+  user         User      @relation(fields: [userId], references: [id])
+  filename     String
+  uploadDate   DateTime  @default(now())
+  vocabulary   Vocabulary[]
+}
+
+model Vocabulary {
+  id              String    @id @default(cuid())
+  fileId          String
+  file            SubtitleFile @relation(fields: [fileId], references: [id])
+  word            String
+  reading         String
+  meaning         String
+  contextSentence String
+  frequency       Int
+  quizItems       QuizItem[]
+}
+
+model QuizAttempt {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  fileId      String
+  score       Int
+  totalWords  Int
+  completedAt DateTime  @default(now())
+}
+
+model QuizItem {
+  id           String    @id @default(cuid())
+  vocabularyId String
+  vocabulary   Vocabulary @relation(fields: [vocabularyId], references: [id])
+  attempts     Int       @default(0)
+  correct      Int       @default(0)
+  lastReviewed DateTime?
+}
+```
+
+## File Structure
+```
+/app
+  /(auth)
+    /login
+    /signup
+  /(dashboard)
+    /dashboard
+    /upload
+    /files/[id]
+    /quiz/[fileId]
+  /api
+    /auth
+    /upload
+    /vocabulary
+    /quiz
+/components
+  /auth
+  /upload
+  /quiz
+  /dashboard
+/lib
+  /db (Prisma client)
+  /srt-parser.ts
+  /vocabulary-extractor.ts
+  /quiz-generator.ts
+  /japanese-processor.ts
+/types
+```
+
+## Specific Implementation Requirements
+
+### SRT Parser
+- Handle standard SRT format with sequence numbers, timestamps, and text
+- Clean HTML tags if present
+- Merge multi-line subtitles appropriately
+
+### Vocabulary Extraction Logic
+- Use Japanese tokenizer (kuromoji.js or TinySegmenter)
+- Identify word types (noun, verb, adjective)
+- Minimum word frequency: 2 occurrences (configurable)
+- Fetch translations from Jisho API or use offline dictionary
+
+### Quiz Flow
+1. User selects a file from their dashboard
+2. Choose quiz type and number of questions (10, 20, 50, or all)
+3. Present questions one at a time or in a list
+4. Show immediate feedback or at the end
+5. Save results to database
+6. Show performance summary with weak areas
+
+### UI/UX Requirements
+- Clean, minimal Japanese-study-app aesthetic
+- Mobile responsive
+- Loading states during file processing
+- Progress bars for uploads and quiz completion
+- Dark mode support
+- Keyboard shortcuts for quiz navigation
+
+## APIs to Integrate (Optional)
+- **Jisho.org API**: For word definitions and readings
+- **OpenAI API**: For better context-aware translations
+- **DeepL API**: For high-quality translations
+
+## Validation & Error Handling
+- File size limits (e.g., 5MB max)
+- SRT format validation
+- Handle files with no extractable vocabulary
+- Rate limiting on uploads
+- Graceful error messages in Japanese/English
+
+## Testing Requirements
+- Unit tests for SRT parsing
+- Unit tests for vocabulary extraction
+- Integration tests for API routes
+- E2E tests for critical user flows (upload → quiz generation → take quiz)
+
+## Deliverables
+1. Fully functional Next.js application
+2. README with setup instructions
+3. Environment variables template (.env.example)
+4. Database migration files
+5. Basic seed data for testing
+6. Deployment configuration for Vercel
+
+## Success Criteria
+- Users can create accounts and log in
+- SRT files upload successfully and process within 30 seconds
+- At least 90% accuracy in vocabulary extraction for standard Japanese text
+- Quizzes generate correctly with 4 multiple-choice options
+- All data persists correctly in database
+- Application is mobile-responsive
+- No critical bugs in core user flows
+
+---
+
+**Start by creating the project structure, then implement features in this order:**
+1. Authentication system
+2. File upload and storage
+3. SRT parsing
+4. Vocabulary extraction
+5. Quiz generation
+6. User dashboard
+7. Polish UI/UX

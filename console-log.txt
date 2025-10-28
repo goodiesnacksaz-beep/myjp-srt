@@ -1,0 +1,450 @@
+📊 Starting progress tracking for file: cmhabp7k20001bn6gbplvjc4k
+📊 Progress tracking started for cmhabp7k20001bn6gbplvjc4k: 100 words
+🚀 Launching background extraction for file: cmhabp7k20001bn6gbplvjc4k
+📝 processVocabularyExtraction called with fileId: cmhabp7k20001bn6gbplvjc4k
+Starting vocabulary extraction for file cmhabp7k20001bn6gbplvjc4k with 303 entries
+📊 Progress: 0/100 (0%)
+📊 Updated progress to 'processing' stage for cmhabp7k20001bn6gbplvjc4k
+Processing 303 subtitle entries...
+Processed 0/303 entries...
+ POST /api/upload 201 in 1443ms
+Kuromoji tokenizer initialized successfully
+Processed 50/303 entries...
+Processed 100/303 entries...
+Processed 150/303 entries...
+Processed 200/303 entries...
+Processed 250/303 entries...
+Processed 300/303 entries...
+Found 297 unique words before filtering
+88 words meet minimum frequency of 2
+Looking up meanings for 88 words using Jisho API...
+🔄 Resetting progress tracker for cmhabp7k20001bn6gbplvjc4k with 88 words
+📊 Progress tracking started for cmhabp7k20001bn6gbplvjc4k: 88 words
+✅ Dictionary initialized - using database cache + Jisho API
+📊 Updated progress: 1/88 for cmhabp7k20001bn6gbplvjc4k
+🔍 Looking up "*" via API...
+❌ No meaning found for "*"
+⚠️ Skipping "*" - no translation found
+⚠️ No results from API for "*"
+📊 Updated progress: 2/88 for cmhabp7k20001bn6gbplvjc4k
+💾 Database cache hit for "何": what
+ ○ Compiling /files/[id] ...
+📊 Updated progress: 3/88 for cmhabp7k20001bn6gbplvjc4k
+ ✓ Compiled /files/[id] in 601ms (1113 modules)
+💾 Database cache hit for "壁": wall, partition
+📊 Updated progress: 4/88 for cmhabp7k20001bn6gbplvjc4k
+ GET /files/cmhabp7k20001bn6gbplvjc4k 200 in 1478ms
+💾 Database cache hit for "ミ": mi (3rd note of a major scale in movable-do solfège), me
+ GET /files/cmhabp7k20001bn6gbplvjc4k 200 in 55ms
+📊 Updated progress: 5/88 for cmhabp7k20001bn6gbplvjc4k
+ ○ Compiling /api/files/[id]/progress ...
+💾 Database cache hit for "カサ": dry and rough, desiccated
+ ✓ Compiled /api/files/[id]/progress in 988ms (1117 modules)
+💾 Database cache hit for "俺": I, me
+💾 Database cache hit for "奴ら": they, those guys
+💾 Database cache hit for "外": outside, exterior
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 3021ms
+💾 Database cache hit for "中": medium (size), average (grade, level, etc.), middle
+📊 Progress: 10/88 (11%)
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 3521ms
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 571ms
+💾 Database cache hit for "人": person, someone, somebody
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 592ms
+💾 Database cache hit for "言う": to say, to utter, to declare
+💾 Database cache hit for "出る": to leave, to exit, to go out
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 584ms
+💾 Database cache hit for "兵団": army corps
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 627ms
+💾 Database cache hit for "調査": investigation, examination, inquiry
+💾 Database cache hit for "人類": mankind, humanity
+💾 Database cache hit for "入る": to enter, to come in, to go in
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 581ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 582ms
+💾 Database cache hit for "バカ": idiot, moron, fool
+💾 Database cache hit for "ダメ": no good, not serving its purpose, useless
+💾 Database cache hit for "逃げる": to run away, to flee, to get away (e.g. from danger)
+📊 Progress: 20/88 (23%)
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 584ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 618ms
+💾 Database cache hit for "母さん": mother
+💾 Database cache hit for "見る": to see, to look, to watch
+💾 Database cache hit for "時": time, hour, moment
+💾 Database cache hit for "来る": to come (spatially or temporally), to approach, to arrive
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 588ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 664ms
+💾 Database cache hit for "巨人": giant, great man
+💾 Database cache hit for "日": Sunday
+💾 Database cache hit for "帰る": to return, to come home, to go home
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 589ms
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 600ms
+💾 Database cache hit for "泣く": to cry, to shed tears, to weep
+💾 Database cache hit for "お前": you
+💾 Database cache hit for "壊す": to break, to destroy, to demolish
+📊 Progress: 30/88 (34%)
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 581ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 582ms
+💾 Database cache hit for "行く": to go, to move (towards), to head (towards)
+💾 Database cache hit for "息子": son
+💾 Database cache hit for "分かる": to understand, to comprehend, to grasp
+💾 Database cache hit for "我々": we
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 600ms
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 603ms
+💾 Database cache hit for "誰": who
+💾 Database cache hit for "無い": nonexistent, not being (there)
+💾 Database cache hit for "今日": today, this day
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 659ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 706ms
+💾 Database cache hit for "街": town, block, neighbourhood
+💾 Database cache hit for "先生": teacher, instructor, master
+💾 Database cache hit for "確か": sure, certain, positive
+📊 Progress: 40/88 (45%)
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 593ms
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 595ms
+💾 Database cache hit for "見える": to be seen, to be visible, to be in sight
+💾 Database cache hit for "死ぬ": to die, to pass away
+💾 Database cache hit for "世界": the world, society, the universe
+💾 Database cache hit for "イヤ": disliking, not wanting, unwilling (to do)
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 594ms
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 596ms
+💾 Database cache hit for "殴る": to strike, to hit, to beat
+💾 Database cache hit for "家": house, residence, dwelling
+💾 Database cache hit for "思い出す": to recall, to remember, to recollect
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 573ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 612ms
+💾 Database cache hit for "支配": rule, domination, control
+💾 Database cache hit for "恐怖": fear, dread, dismay
+💾 Database cache hit for "鳥": bird
+📊 Progress: 50/88 (57%)
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 567ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 585ms
+💾 Database cache hit for "籠": basket (shopping, etc.), hamper, cage
+💾 Database cache hit for "屈辱": disgrace, humiliation
+💾 Database cache hit for "目標": goal, target, aim
+💾 Database cache hit for "神": god, deity, divinity
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 606ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 610ms
+💾 Database cache hit for "言える": to be possible to say, to be able to say
+💾 Database cache hit for "酒": alcohol, sake
+💾 Database cache hit for "仕事": work, job, labor
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 565ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 602ms
+💾 Database cache hit for "門": door (esp. Japanese-style)
+💾 Database cache hit for "兵": (common) soldier, rank and file
+💾 Database cache hit for "問題": question (e.g. on a test), problem
+📊 Progress: 60/88 (68%)
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 569ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 601ms
+💾 Database cache hit for "父さん": father, dad, papa
+💾 Database cache hit for "兵士": soldier
+💾 Database cache hit for "メートル": metre (unit of length), meter
+💾 Database cache hit for "戦う": to make war (on), to wage war (against), to go to war (with)
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 587ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 591ms
+💾 Database cache hit for "飯": cooked rice
+💾 Database cache hit for "平和": peace, harmony
+ GET /api/auth/session 200 in 47ms
+ GET /api/auth/session 200 in 85ms
+💾 Database cache hit for "一生": whole life, a lifetime, all through life
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 602ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 635ms
+💾 Database cache hit for "食う": to eat
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 572ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 587ms
+💾 Database cache hit for "家畜": domestic animals, livestock, cattle
+💾 Database cache hit for "子供": child, children
+📊 Progress: 70/88 (80%)
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 580ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 603ms
+💾 Database cache hit for "ハン": khan (medieval ruler of a Tatary tribe)
+💾 Database cache hit for "ネス": -ness
+💾 Database cache hit for "奴": fellow, guy, chap
+💾 Database cache hit for "持つ": to hold (in one's hand), to take, to carry
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 565ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 619ms
+💾 Database cache hit for "今回": this time, now
+💾 Database cache hit for "手伝う": to help, to assist, to aid
+💾 Database cache hit for "知る": to know, to be aware (of), to be conscious (of)
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 576ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 580ms
+ GET /api/auth/session 200 in 57ms
+💾 Database cache hit for "今": now, the present time, just now
+ GET /api/auth/session 200 in 117ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 628ms
+💾 Database cache hit for "命": life, life force
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 649ms
+💾 Database cache hit for "カルラ": Karula National Park
+📊 Progress: 80/88 (91%)
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 577ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 587ms
+💾 Database cache hit for "人間": human being, human, person
+💾 Database cache hit for "困る": to be troubled, to have difficulty, to be in a fix
+💾 Database cache hit for "異端": heresy, nonconformism, heathenism
+💾 Database cache hit for "僕": I, me
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 561ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 609ms
+💾 Database cache hit for "年": year
+💾 Database cache hit for "連れる": to take (someone) with one, to bring along, to go with
+💾 Database cache hit for "早い": fast, quick, rapid
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 0,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 566ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 620ms
+💾 Database cache hit for "聞く": to hear
+💾 Database cache hit for "助ける": to save, to rescue, to spare
+✅ Vocabulary extraction complete: 87 words with meanings
+✅ Vocabulary extraction complete for cmhabp7k20001bn6gbplvjc4k, found 87 words
+Extracted 87 vocabulary words, saving to database...
+Vocabulary extraction completed for file cmhabp7k20001bn6gbplvjc4k: 87 words saved
+✅ Progress complete for cmhabp7k20001bn6gbplvjc4k: 87 words saved
+📊 Progress API for cmhabp7k20001bn6gbplvjc4k: {
+  hasProgress: false,
+  percentage: 0,
+  isProcessing: false,
+  vocabularyCount: 87,
+  stage: undefined,
+  currentWord: undefined,
+  totalWords: undefined
+}
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k/progress 200 in 586ms
+ GET /api/files/cmhabp7k20001bn6gbplvjc4k 200 in 663ms
