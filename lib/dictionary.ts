@@ -150,20 +150,5 @@ export class Dictionary {
 
         return results;
     }
-
-    /**
-     * Search with fuzzy matching
-     */
-    static async search(query: string, limit: number = 5): Promise<any[]> {
-        await this.initialize();
-
-        try {
-            const results = dictionary.find(query);
-            return results ? results.slice(0, limit) : [];
-        } catch (error) {
-            console.error(`Error searching for "${query}":`, error);
-            return [];
-        }
-    }
 }
 
