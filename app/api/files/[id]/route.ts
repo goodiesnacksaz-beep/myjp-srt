@@ -47,7 +47,7 @@ export async function GET(
 
 export async function DELETE(
     req: Request,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
         const session = await getServerSession(authOptions);
@@ -56,9 +56,12 @@ export async function DELETE(
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
+        // Await params (Next.js 15 requirement)
+        const { id } = await params;
+
         const file = await prisma.subtitleFile.findFirst({
             where: {
-                id: params.id,
+                id: id,
                 userId: session.user.id,
             },
         });
@@ -69,7 +72,7 @@ export async function DELETE(
 
         await prisma.subtitleFile.delete({
             where: {
-                id: params.id,
+                id: id,
             },
         });
 
