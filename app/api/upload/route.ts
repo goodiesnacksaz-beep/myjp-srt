@@ -99,6 +99,8 @@ async function processVocabularyExtraction(
         ProgressTracker.update(fileId, 'processing', 0, 'Analyzing Japanese text...');
         console.log(`📊 Updated progress to 'processing' stage for ${fileId}`);
 
+        console.log(`🔧 About to call VocabularyExtractor.extractFromSubtitles...`);
+        
         const vocabulary = await VocabularyExtractor.extractFromSubtitles(
             entries,
             2, // minimum frequency
@@ -106,6 +108,10 @@ async function processVocabularyExtraction(
         );
 
         console.log(`✅ Vocabulary extraction complete for ${fileId}, found ${vocabulary.length} words`);
+
+        if (vocabulary.length === 0) {
+            console.warn(`⚠️ No vocabulary extracted from file ${fileId}! Entries: ${entries.length}`);
+        }
 
         console.log(`Extracted ${vocabulary.length} vocabulary words, saving to database...`);
 
@@ -123,6 +129,9 @@ async function processVocabularyExtraction(
                     frequency: vocab.frequency,
                 })),
             });
+            console.log(`💾 Successfully saved ${vocabulary.length} vocabulary items to database`);
+        } else {
+            console.warn(`⚠️ No vocabulary to save for file ${fileId}`);
         }
 
         console.log(`Vocabulary extraction completed for file ${fileId}: ${vocabulary.length} words saved`);
@@ -131,12 +140,16 @@ async function processVocabularyExtraction(
         ProgressTracker.complete(fileId, vocabulary.length);
 
     } catch (error) {
-        console.error(`Vocabulary extraction error for file ${fileId}:`, error);
+        console.error(`❌ Vocabulary extraction error for file ${fileId}:`, error);
+
+        if (error instanceof Error) {
+            console.error(`Error name: ${error.name}`);
+            console.error(`Error message: ${error.message}`);
+            console.error(`Error stack: ${error.stack}`);
+        }
 
         const errorMessage = error instanceof Error ? error.message : String(error);
         ProgressTracker.error(fileId, errorMessage);
-
-        console.error("Full error details:", errorMessage);
     }
 }
 

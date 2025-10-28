@@ -18,17 +18,30 @@ export class JapaneseProcessor {
         if (tokenizer) return;
 
         return new Promise((resolve, reject) => {
-            const dicPath = process.env.NODE_ENV === 'production'
-                ? "/var/task/node_modules/kuromoji/dict"
-                : "node_modules/kuromoji/dict";
+            // Try multiple possible dictionary paths for different environments
+            let dicPath: string;
+            
+            if (process.env.VERCEL) {
+                // Vercel environment
+                dicPath = path.join(process.cwd(), 'node_modules/kuromoji/dict');
+            } else if (process.env.NODE_ENV === 'production') {
+                // AWS Lambda or other serverless
+                dicPath = "/var/task/node_modules/kuromoji/dict";
+            } else {
+                // Local development
+                dicPath = path.join(process.cwd(), 'node_modules/kuromoji/dict');
+            }
+
+            console.log(`🔧 Initializing kuromoji with dicPath: ${dicPath}`);
 
             kuromoji.builder({ dicPath }).build((err, _tokenizer) => {
                 if (err) {
-                    console.error("Kuromoji initialization error:", err);
+                    console.error("❌ Kuromoji initialization error:", err);
+                    console.error("Attempted dicPath:", dicPath);
                     reject(err);
                 } else {
                     tokenizer = _tokenizer;
-                    console.log("Kuromoji tokenizer initialized successfully");
+                    console.log("✅ Kuromoji tokenizer initialized successfully");
                     resolve();
                 }
             });
