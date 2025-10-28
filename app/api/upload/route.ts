@@ -63,16 +63,16 @@ export async function POST(req: Request) {
         console.log(`📊 Starting progress tracking for file: ${subtitleFile.id}`);
         ProgressTracker.start(subtitleFile.id, 100); // Estimated word count
 
-        // Extract vocabulary in background (async)
-        console.log(`🚀 Launching background extraction for file: ${subtitleFile.id}`);
-        processVocabularyExtraction(subtitleFile.id, entries);
+        // Extract vocabulary synchronously (required for serverless)
+        console.log(`🚀 Starting vocabulary extraction for file: ${subtitleFile.id}`);
+        await processVocabularyExtraction(subtitleFile.id, entries);
 
         return NextResponse.json(
             {
                 success: true,
                 fileId: subtitleFile.id,
                 filename: file.name,
-                message: "File uploaded successfully. Vocabulary extraction in progress.",
+                message: "File uploaded and vocabulary extracted successfully.",
             },
             { status: 201 }
         );
